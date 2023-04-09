@@ -153,7 +153,7 @@ LOGIN_REDIRECT_URL = 'taskapp:items'
 LOGOUT_REDIRECT_URL = 'home'
 
 INTERNAL_IPS = ['127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://taskmanager-production-f207.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://taskmanager-gb.up.railway.app']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
