@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'taskapp',
     'crispy_forms',
     'crispy_bootstrap4',
+    'whitenoise.runserver_nostatic', 
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -144,6 +145,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATICFILES_DIRS = [Path(BASE_DIR, 'static')]
 
