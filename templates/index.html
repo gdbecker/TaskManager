@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+<!-- Main -->
+	<div id="main">
+
+		<!-- Home Page General -->
+		<article id="home" class="panel intro">
+			<header>
+				<hr>
+				<h1>Task Manager</h1>
+				<h4>Your go-to place to manage all of your needs!</h4>
+				<p>Log in or register to get started.</p>
+				<hr>
+			</header>
+			<a href="{% url 'accounts:login' %}" class="jumplink pic">
+				<span class="arrow icon solid fa-chevron-right"><span>Log In</span></span>
+				<img src="{% static 'TaskManager/img/home_2.jpg' %}" alt="" />
+			</a>
+		</article>
+	</div>
+{% endblock %}

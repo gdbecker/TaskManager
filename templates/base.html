@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+{% load static %}
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+		<title>Task Manager</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'TaskManager/css/styles.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'TaskManager/css/noscript.css' %}" /></noscript>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						{% if not user.is_authenticated %}
+						<a href="{% url 'home' %}" class="icon solid fa-home"><span>Home</span></a>
+          	<a href="{% url 'accounts:login' %}" class="icon solid fa-arrow-right"><span>Log In</span></a>
+						<a href="{% url 'accounts:register' %}" class="icon solid fa-pencil-alt"><span>Register</span></a>
+
+						{% elif user.is_authenticated %}
+						<a href="{% url 'taskapp:items' %}" class="icon solid fa-home"><span>All Tasks</span></a>
+						<a href="{% url 'taskapp:add_item' %}" class="icon solid fa-folder"><span>New Task</span></a>
+
+            {% if user.is_superuser %}
+            <a href="{% url 'taskapp:add_category' %}" class="icon solid fa-pen-alt"><span>New Group</span></a>
+            {% endif %}
+						
+						<a href="{% url 'accounts:logout' %}" class="icon solid fa-backward"><span>Log Out</span></a>
+
+          	{% endif %}
+					</nav>
+
+          {% block content %}
+
+          {% endblock %}
+
+          <!-- Footer -->
+          <div id="footer">
+            <ul class="copyright">
+              <li>&copy; Garrett Becker</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="{% static 'TaskManager/js/breakpoints.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'TaskManager/js/browser.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'TaskManager/js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'TaskManager/js/mainn.js' %}"></script>
+        <script type="text/javascript" src="{% static 'TaskManager/js/util.js' %}"></script>
+  </body>

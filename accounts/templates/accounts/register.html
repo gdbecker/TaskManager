@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<!-- Main -->
+	<div id="main">
+                <!-- Register -->
+		<article id="register" class="panel">
+			<header>
+				<h2>Create New Account</h2>
+			</header>
+
+      <form  method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-default" value="Sign Me Up!">
+      </form>
+
+		</article>
+	</div>
+{% endblock %}

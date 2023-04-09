@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- Main -->
+<div id="main">
+	<!-- Show all tasks -->
+	<article id="tasks" class="panel">
+		<header>
+      <h2>hello {{ user.username }}!</h2>
+			<p>here is your to-do list</p>
+		</header>
+
+		<table class="table">
+			<thead>
+				<th>Task</th>
+				<th>Category</th>
+				<th>Due Date</th>
+				<th>Completion Status</th>
+				<th>Complete?</th>
+				<th>Delete</th>
+			</thead>
+			<tbody>
+			{% for i in item_user %}
+			<tr>
+				<td>{{ i.text }}</td>
+				<td>{{ i.category }}</td>
+				<td>{{ i.due_date }}</td>
+
+        {% if i.status == False %}
+        <td>Incomplete</td>
+        {% else %}
+        <td>Done</td>
+        {% endif %}
+
+				{% if i.status == False %}
+				<td><p><a href="{% url 'taskapp:edit_item' pk=i.pk %}">✔️</a></p></td>
+				{% else %}
+				<td></td>
+				{% endif %}
+
+				<td><p><a href="{% url 'taskapp:delete_item' pk=i.pk %}">❌</a></p></td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+
+    <hr>
+
+    <!-- Filter form here -->
+    <form  method="POST">
+			{% csrf_token %}
+      {{ form.as_p }}
+			<input type="submit" class="btn btn-default" value="Filter">
+		</form>
+
+		<hr>
+
+	</article>
+</div>
+{% endblock %}
