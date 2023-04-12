@@ -218,6 +218,22 @@
 
 				});
 
+			// Fix about pic.
+			$('.panel.about').each(function() {
+
+				var $pic = $(this).children('.pic'),
+					$img = $pic.children('img');
+
+				$pic
+					.css('background-image', 'url(' + $img.attr('src') + ')')
+					.css('background-size', 'cover')
+					.css('background-position', 'center');
+
+				$img
+					.css('visibility', 'hidden');
+
+			});
+
 		}
 
 })(jQuery);

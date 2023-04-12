@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+<!-- Main -->
+	<div id="main">
+
+		<!-- About Page -->
+		<article id="about" class="panel about">
+            <div class="jumplink pic">
+				<img src="{% static 'TaskManager/img/GarrettBecker.jpg' %}" alt="" />
+			</div>
+			<header>
+				<hr>
+                    <h2>Hi, I'm Garrett!</h2>
+                    <p>I am an aspiring web developer and I love building and making to care for and make other people's 
+                        lives better.</p>
+                    <p>This is one of my final projects from Angela Yu's Udemy course 100 Days of Code: The Complete 
+                        Python Pro Bootcamp. This was a lot of fun to problem solve from existing design code and adjust to 
+                        what I wanted.</p>
+                    <p>TaskManager allows you to quickly keep track of what you need to get done, sort by date and category, 
+                        mark tasks as complete, and delete them from your list. If you are a superuser you will be able to add
+                    new categories to the database for other users to utilize.</p>
+                    <p>Front-End: HTML, CSS, JavaScript</p>
+                    <p>Back-End: Python, Django REST Framework</p>
+                    <p>Authentication: CSRF tokens</p>
+				<hr>
+			</header>
+			
+		</article>
+	</div>
+{% endblock %}
