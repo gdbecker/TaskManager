@@ -12,7 +12,7 @@ Web Development
 
 ### Links
 
-- [Live Demo](https://replit.com/@gdbecker/082-Task-Manager-Web-App-Django)
+- [Live Demo](https://082-task-manager-web-app-django-gdbecker.replit.app/)
 - [100 Days of Code: Python Repo](https://github.com/gdbecker/100DaysOfCodePython/tree/main/06%20-%20Professional/Day%20082%20-%20Task%20Manager%20Web%20App%20(Django))
 
 ### Tools & Packages
